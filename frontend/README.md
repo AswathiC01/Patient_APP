@@ -24,7 +24,7 @@ npm run dev
 
 ### Backend
 ```bash
-pip install -r requirements.txt
+pip install fastapi uvicorn sqlalchemy
 uvicorn main:app --reload
 ```
 
