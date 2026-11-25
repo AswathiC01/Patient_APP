@@ -1,6 +1,5 @@
 
 import "./App.css"
-// import { useState, useEffect } from "react";
 import { useState, useEffect, useRef } from "react";
 
 function App() {
@@ -88,7 +87,6 @@ if (editId) {
 
 
 const handleDelete = async (patientId) => {
-    // alert("Delete function called!");
 const confirmDelete = window.confirm("Are you sure you want to delete this patient?");
 
 if (!confirmDelete) {
@@ -148,9 +146,6 @@ try {
 }
 
 const handleEdit = (patient) => {
-  // console.log("Edit clicked:", patient);
-  // console.log(patient.name, patient.age);
-  // alert("Name: " + patient.name);
 
   setEditId(patient.id);
   setName(patient.name);
@@ -180,11 +175,11 @@ const filteredPatients = patients.filter((patient) =>
     <div className="container">
       <h1>Patient Admission Management</h1>
 
-      {/* <form onSubmit={handleSubmit}> */}
+     
       <form ref={formRef} onSubmit={handleSubmit}>
         <label>Name</label>
         <input value={name} onChange={(e) => setName(e.target.value)} required pattern="[A-Za-z ]+"/>
-        {/* <p>Selected name: {name}</p> */}
+       
 
         <label>Age</label>
         <input type="number" value={age} onChange={(e) => setAge(e.target.value)} required min="0" max="120" />
