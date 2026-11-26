@@ -1,20 +1,32 @@
+
 # Python
 __pycache__/
 *.py[cod]
 venv/
 ENV/
+.venv/
 
 # Database
 *.db
+*.sqlite3
 
-# React
-node_modules/
-dist/
-
-# Secrets
+# Environment variables and secrets
 .env
 .env.*
 !.env.example
 
+# React / Node.js
+node_modules/
+dist/
+frontend/dist/
+
+# Vercel
+.vercel/
+
 # Editor files
 .vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
