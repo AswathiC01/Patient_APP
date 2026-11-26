@@ -1,6 +1,7 @@
 
 import "./App.css"
 import { useState, useEffect, useRef } from "react";
+const API_URL = "https://patient-app-backend-eight.vercel.app";
 
 function App() {
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ function App() {
   const formRef = useRef(null);
 
   useEffect(() => {
-  fetch("http://127.0.0.1:8000/patients/")
+  fetch(`${API_URL}/patients/`)
     .then((response) => response.json())
     .then((data) => setPatients(data))
     .catch((error) => console.log(error));
@@ -43,7 +44,7 @@ const patient = {
 
 try {
   const response = await fetch(
-  editId? `http://127.0.0.1:8000/patients/${editId}`: "http://127.0.0.1:8000/patients/",
+  editId? `${API_URL}/patients/${editId}`: "${API_URL}/patients/",
   {
     method: editId ? "PUT" : "POST",
       headers: {
@@ -94,7 +95,7 @@ if (!confirmDelete) {
    }
 try {
     const response = await fetch(
-      `http://127.0.0.1:8000/patients/${patientId}`,
+      `${API_URL}/patients/${patientId}`,
       {
         method: "DELETE"
       }
@@ -122,7 +123,7 @@ const discharged=window.confirm("Are you sure you want to discharge this patient
   }   
 try {
   const response = await fetch(
-    `http://127.0.0.1:8000/patients/${patientId}/discharge`,
+    `${API_URL}/patients/${patientId}/discharge`,
     {
       method: "PATCH"
     }
