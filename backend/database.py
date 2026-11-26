@@ -7,7 +7,13 @@ DATABASE_URL = os.getenv(
     "DATABASE_URL",
     "sqlite:///./patients.db"
 )
-
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace(
+        "postgresql://",
+        "postgresql+psycopg2://",
+        1
+    )
+    
 connect_args = {}
 
 if DATABASE_URL.startswith("sqlite"):
