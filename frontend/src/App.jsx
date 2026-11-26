@@ -44,7 +44,7 @@ const patient = {
 
 try {
   const response = await fetch(
-  editId? `${API_URL}/patients/${editId}`: "${API_URL}/patients/",
+  editId? `${API_URL}/patients/${editId}`: `${API_URL}/patients/`,
   {
     method: editId ? "PUT" : "POST",
       headers: {
