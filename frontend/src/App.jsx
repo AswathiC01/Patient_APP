@@ -267,7 +267,7 @@ const filteredPatients = patients.filter((patient) =>
   <option value="Dr. Kumar">Dr. Kumar</option>
   <option value="Dr. Seetha">Dr. Seetha</option>
   <option value="Dr. Ram">Dr. Ram</option>
-  <option value="Dr. Ramiya">Dr.Ramiya</option>
+  <option value="Dr. Ramiya">Dr. Ramiya</option>
 </select>
 
 <div className="table-wrapper">
